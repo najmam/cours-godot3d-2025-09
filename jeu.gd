@@ -19,5 +19,6 @@ func _process(delta: float) -> void:
 	personnage.position = personnage.position + deplacement
 	
 	var orientation = 0
-	
+	## BUT DU JEU : calculer orientation de manière à ce que
+	##              le perso regarde où il va
 	%character.rotation_degrees.y = orientation
