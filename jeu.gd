@@ -19,6 +19,19 @@ func _process(delta: float) -> void:
 	personnage.position = personnage.position + deplacement
 	
 	var orientation = 0
-	## BUT DU JEU : calculer orientation de manière à ce que
-	##              le perso regarde où il va
+	## EXO 2
+	## BUT DU JEU :
+	## 1) le perso doit regarder où il va
+	## 2) quand on n'appuie sur rien, le perso doit garder la dernière
+	##    direction de regard qu'il avait pendant qu'il se déplaçait.
+	var machin = vitesse.angle_to(Vector3(0,0,1)) * 180/PI
+	print("vitesse = ", vitesse, ", machin = ", machin)
+	orientation = machin
 	%character.rotation_degrees.y = orientation
+	
+	## EXO 3
+	## - permettre de déplacer le personnage à la manette
+	
+	## EXO BONUS:
+	## - permettre de déplacer la caméra à la manette
+	##   tout en conservant un déplacement du personnage qui fonctionne 
