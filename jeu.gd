@@ -6,8 +6,7 @@ func _ready():
 	print("coucou")
 
 func _process(delta: float) -> void:
-	# print("temps écoulé depuis la dernière frame : ", delta)
-	
+	# print("temps écoulé depuis la dernière frame : ", delta)	
 	var personnage = %character
 	
 	var vitesse = Vector3(0,0,0)
@@ -19,4 +18,6 @@ func _process(delta: float) -> void:
 	var deplacement = VALEUR_VITESSE * vitesse * delta
 	personnage.position = personnage.position + deplacement
 	
-	$deplacement_perso.rotation.y += 0.02
+	var orientation = 0
+	
+	%character.rotation_degrees.y = orientation
