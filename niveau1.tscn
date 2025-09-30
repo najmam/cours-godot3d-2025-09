@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://bfeisjx23pt14"]
+
+[ext_resource type="PackedScene" uid="uid://dmfmqjpx4n2ei" path="res://kenney-3d-platformer/models/platform-large.glb" id="1_g30or"]
+[ext_resource type="PackedScene" uid="uid://b3ofi0lvm5xra" path="res://kenney-3d-platformer/models/platform-falling.glb" id="2_midqc"]
+
+[node name="root" type="Node3D"]
+
+[node name="platform-large2" parent="." instance=ExtResource("1_g30or")]
+
+[node name="platform-falling2" parent="." instance=ExtResource("2_midqc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.819883, 0, -2.2181025)

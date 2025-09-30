@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=3 uid="uid://bovk7aarjx8yk"]
+
+[ext_resource type="PackedScene" uid="uid://ci6cby5siqova" path="res://kenney-3d-platformer/models/character.glb" id="1_4vgkv"]
+[ext_resource type="Script" uid="uid://b8mww0xpd86j0" path="res://jeu.gd" id="1_xsnwh"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_4vgkv"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_xsnwh"]
+sky_material = SubResource("ProceduralSkyMaterial_4vgkv")
+
+[sub_resource type="Environment" id="Environment_rkcwo"]
+background_mode = 2
+sky = SubResource("Sky_xsnwh")
+tonemap_mode = 2
+
+[node name="racine" type="Node3D"]
+script = ExtResource("1_xsnwh")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_rkcwo")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.9336367, 0.3582213, 0, -0.3582213, 0.9336367, 0, 1.8295531, 3.1341307)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -0.63470364, 0.7727556, 0, -0.7727556, -0.63470364, 0, 4.3462925, -7.557098)
+
+[node name="character" parent="." instance=ExtResource("1_4vgkv")]
