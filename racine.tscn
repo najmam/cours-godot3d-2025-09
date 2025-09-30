@@ -1,7 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://bovk7aarjx8yk"]
+[gd_scene load_steps=8 format=3 uid="uid://bovk7aarjx8yk"]
 
 [ext_resource type="PackedScene" uid="uid://ci6cby5siqova" path="res://kenney-3d-platformer/models/character.glb" id="1_4vgkv"]
 [ext_resource type="Script" uid="uid://b8mww0xpd86j0" path="res://jeu.gd" id="1_xsnwh"]
+[ext_resource type="PackedScene" uid="uid://dmfmqjpx4n2ei" path="res://kenney-3d-platformer/models/platform-large.glb" id="3_rkcwo"]
+[ext_resource type="PackedScene" uid="uid://bxxenl01jjwtn" path="res://kenney-3d-platformer/models/flag.glb" id="4_0tuo0"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_4vgkv"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -27,4 +29,18 @@ transform = Transform3D(1, 0, 0, 0, 0.9336367, 0.3582213, 0, -0.3582213, 0.93363
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -0.63470364, 0.7727556, 0, -0.7727556, -0.63470364, 0, 4.3462925, -7.557098)
 
-[node name="character" parent="." instance=ExtResource("1_4vgkv")]
+[node name="platform-large2" parent="." instance=ExtResource("3_rkcwo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.27683163, -0.5103141, -0.35728455)
+
+[node name="platform-large3" parent="." instance=ExtResource("3_rkcwo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.4405584, -0.5103141, -0.51562405)
+
+[node name="flag2" parent="." instance=ExtResource("4_0tuo0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.022875309, 0, 0.036958694)
+
+[node name="deplacement_perso" type="Node3D" parent="."]
+transform = Transform3D(1, 0, -1.7484555e-07, 0, 1, 0, 1.7484555e-07, 0, 1, 0, 0, 0)
+
+[node name="character" parent="deplacement_perso" instance=ExtResource("1_4vgkv")]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5370605, 0.13311708, 0.0861752)
