@@ -23,24 +23,26 @@ script = ExtResource("1_xsnwh")
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_rkcwo")
 
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.9336367, 0.3582213, 0, -0.3582213, 0.9336367, 0, 1.9159845, 3.359398)
-
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -0.63470364, 0.7727556, 0, -0.7727556, -0.63470364, 0, 4.3462925, -7.557098)
+
+[node name="camera_position" type="Node3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9159845, 3.359398)
+
+[node name="camera" type="Camera3D" parent="camera_position"]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 0.9335804, 0.35836795, 0, -0.35836795, 0.9335804, 0, 0, 0)
+
+[node name="character" parent="." instance=ExtResource("1_4vgkv")]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, -1.7484555e-07, 0, 1, 0, 1.7484555e-07, 0, 1, 1.5370605, 0.13311708, 0.08617547)
+
+[node name="flag" parent="." instance=ExtResource("4_0tuo0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.022875309, 0, 0.036958694)
 
 [node name="platform-large2" parent="." instance=ExtResource("3_rkcwo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.27683163, -0.5103141, -0.35728455)
 
 [node name="platform-large3" parent="." instance=ExtResource("3_rkcwo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.4405584, -0.5103141, -0.51562405)
-
-[node name="flag2" parent="." instance=ExtResource("4_0tuo0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.022875309, 0, 0.036958694)
-
-[node name="deplacement_perso" type="Node3D" parent="."]
-transform = Transform3D(1, 0, -1.7484555e-07, 0, 1, 0, 1.7484555e-07, 0, 1, 0, 0, 0)
-
-[node name="character" parent="deplacement_perso" instance=ExtResource("1_4vgkv")]
-unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5370605, 0.13311708, 0.0861752)
