@@ -1,11 +1,27 @@
-[gd_scene load_steps=10 format=3 uid="uid://bovk7aarjx8yk"]
+[gd_scene load_steps=26 format=3 uid="uid://bovk7aarjx8yk"]
 
 [ext_resource type="PackedScene" uid="uid://ci6cby5siqova" path="res://assets-thirdparty/kenney-3d-platformer/models/character.glb" id="1_4vgkv"]
 [ext_resource type="Script" uid="uid://b8mww0xpd86j0" path="res://racine.gd" id="1_xsnwh"]
 [ext_resource type="Script" uid="uid://b58pc037vqgqa" path="res://camera.gd" id="2_rlwjj"]
-[ext_resource type="PackedScene" uid="uid://dmfmqjpx4n2ei" path="res://assets-thirdparty/kenney-3d-platformer/models/platform-large.glb" id="3_rkcwo"]
-[ext_resource type="PackedScene" uid="uid://bxxenl01jjwtn" path="res://assets-thirdparty/kenney-3d-platformer/models/flag.glb" id="4_0tuo0"]
 [ext_resource type="Script" uid="uid://c37kxvfbb1tqi" path="res://character.gd" id="4_ns5mm"]
+[ext_resource type="PackedScene" uid="uid://2dt8jpdixua2" path="res://assets-thirdparty/kenney_prototype-kit/Models/GLB format/button-floor-square-small.glb" id="5_x3dlp"]
+[ext_resource type="PackedScene" uid="uid://ub7n5p06sm0i" path="res://assets-thirdparty/kenney_prototype-kit/Models/GLB format/animal-dog.glb" id="6_ou6ki"]
+[ext_resource type="PackedScene" uid="uid://ckgll0ohvy0eb" path="res://assets-thirdparty/kenney_prototype-kit/Models/GLB format/shape-cube.glb" id="7_mf3sx"]
+[ext_resource type="PackedScene" uid="uid://cw7ivoqfc4opf" path="res://assets-thirdparty/kenney_prototype-kit/Models/GLB format/wall-corner-low.glb" id="8_2kdf2"]
+[ext_resource type="PackedScene" uid="uid://c5ytorvok0qxh" path="res://assets-thirdparty/kenney_prototype-kit/Models/GLB format/shape-cylinder-detailed.glb" id="9_owi8g"]
+[ext_resource type="PackedScene" uid="uid://ro4y5h5hc02x" path="res://assets-thirdparty/kenney_prototype-kit/Models/GLB format/stairs-diagonal-small.glb" id="10_7u8jh"]
+[ext_resource type="PackedScene" uid="uid://cr4xgipe7ojbr" path="res://assets-thirdparty/kenney_prototype-kit/Models/GLB format/target-b-round.glb" id="11_7lt3r"]
+[ext_resource type="PackedScene" uid="uid://c1qberfp0i2dr" path="res://assets-thirdparty/kenney_prototype-kit/Models/GLB format/wall-diagonal-low.glb" id="12_hvd72"]
+[ext_resource type="PackedScene" uid="uid://d0klt0577vmc0" path="res://assets-thirdparty/kenney_prototype-kit/Models/GLB format/wall-corner.glb" id="13_ldm5s"]
+[ext_resource type="PackedScene" uid="uid://ckm1uo8y537f3" path="res://assets-thirdparty/kenney_prototype-kit/Models/GLB format/wall-doorway-round.glb" id="14_pu022"]
+[ext_resource type="PackedScene" uid="uid://djb6omnhx7tah" path="res://assets-thirdparty/kenney_prototype-kit/Models/GLB format/wall-low.glb" id="15_06d7t"]
+[ext_resource type="PackedScene" uid="uid://c6sgtvma2ghl5" path="res://assets-thirdparty/kenney_prototype-kit/Models/GLB format/wall.glb" id="16_3h0xw"]
+[ext_resource type="PackedScene" uid="uid://u74tiu343osd" path="res://assets-thirdparty/kenney_prototype-kit/Models/GLB format/wall-window-large.glb" id="17_537ov"]
+[ext_resource type="PackedScene" uid="uid://c7cja0t5j2gnj" path="res://assets-thirdparty/kenney_prototype-kit/Models/GLB format/weapon-sword.glb" id="18_ib2m5"]
+[ext_resource type="PackedScene" uid="uid://eruuvbclcy4p" path="res://assets-thirdparty/kenney_prototype-kit/Models/GLB format/weapon-shield.glb" id="19_s1cs0"]
+[ext_resource type="PackedScene" uid="uid://cgk31hp1dmd16" path="res://assets-thirdparty/kenney_prototype-kit/Models/GLB format/figurine-cube-detailed.glb" id="20_ma08d"]
+[ext_resource type="PackedScene" uid="uid://dmhmfw4pdbh0m" path="res://assets-thirdparty/kenney_prototype-kit/Models/GLB format/figurine.glb" id="21_nylso"]
+[ext_resource type="PackedScene" uid="uid://7xkoydeoxrpd" path="res://assets-thirdparty/kenney_prototype-kit/Models/GLB format/animal-bison.glb" id="22_klcii"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_4vgkv"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -28,26 +44,71 @@ environment = SubResource("Environment_rkcwo")
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -0.63470364, 0.7727556, 0, -0.7727556, -0.63470364, 0, 4.3462925, -7.557098)
 
-[node name="camera_position" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9159845, 3.359398)
-
-[node name="camera" type="Camera3D" parent="camera_position"]
+[node name="camera" type="Camera3D" parent="."]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 0.9335804, 0.35836795, 0, -0.35836795, 0.9335804, 0, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 0.93358046, 0.35836798, 0, -0.35836798, 0.93358046, 0, 2.4663687, 4.7931976)
 script = ExtResource("2_rlwjj")
 
 [node name="character" parent="." instance=ExtResource("1_4vgkv")]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, -1.7484555e-07, 0, 1, 0, 1.7484555e-07, 0, 1, 1.5370605, 0.13311708, 0.08617547)
+transform = Transform3D(1, 0, -1.7484555e-07, 0, 1, 0, 1.7484555e-07, 0, 1, 0, 0, 0)
 script = ExtResource("4_ns5mm")
 
-[node name="level" type="Node3D" parent="."]
+[node name="=====LEVEL=====" type="Node3D" parent="."]
 
-[node name="flag" parent="level" instance=ExtResource("4_0tuo0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.022875309, 0, 0.036958694)
+[node name="button-floor-square-small2" parent="." instance=ExtResource("5_x3dlp")]
+transform = Transform3D(9.553427e-16, 2.1855694e-08, 0.5, 0.5, -2.1855694e-08, 0, 2.1855694e-08, 0.5, -2.1855694e-08, -2.9069997e-07, 0.55048966, -6.65044)
 
-[node name="platform-large2" parent="level" instance=ExtResource("3_rkcwo")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.27683163, -0.5103141, -0.35728455)
+[node name="animal-dog2" parent="." instance=ExtResource("6_ou6ki")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -1.1552664, 0, -3.8761418)
 
-[node name="platform-large3" parent="level" instance=ExtResource("3_rkcwo")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.4405584, -0.5103141, -0.51562405)
+[node name="shape-cube2" parent="." instance=ExtResource("7_mf3sx")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.23227632, 0, -4.0838213)
+
+[node name="wall-corner-low2" parent="." instance=ExtResource("8_2kdf2")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -2.307546, 0, -6.340806)
+
+[node name="shape-cylinder-detailed2" parent="." instance=ExtResource("9_owi8g")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 1.1913137, 0, -6.653536)
+
+[node name="stairs-diagonal-small2" parent="." instance=ExtResource("10_7u8jh")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 3.0649512, 0, -7.1233644)
+
+[node name="target-b-round2" parent="." instance=ExtResource("11_7lt3r")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.26379132, 0.26022887, -3.5679212)
+
+[node name="wall-diagonal-low3" parent="." instance=ExtResource("12_hvd72")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -3.132522, 0, -5.602132)
+
+[node name="wall-corner3" parent="." instance=ExtResource("13_ldm5s")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -3.9343662, 0, -4.7897387)
+
+[node name="wall-doorway-round2" parent="." instance=ExtResource("14_pu022")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.9380021, 0, -6.6993895)
+
+[node name="wall-low2" parent="." instance=ExtResource("15_06d7t")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -2.9787188, 0, -4.2287865)
+
+[node name="wall2" parent="." instance=ExtResource("16_3h0xw")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.535208, 0, -6.7308435)
+
+[node name="wall3" parent="." instance=ExtResource("16_3h0xw")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 2.0722773, 0, -6.7308435)
+
+[node name="wall-window-large2" parent="." instance=ExtResource("17_537ov")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -3.9238136, 0, -4.2305536)
+
+[node name="weapon-sword2" parent="." instance=ExtResource("18_ib2m5")]
+transform = Transform3D(1.9106855e-15, -4.371139e-08, 1, -1, -4.371139e-08, 0, 4.371139e-08, -1, -4.371139e-08, 3.287944, 0.56726456, -1.1498036)
+
+[node name="weapon-shield2" parent="." instance=ExtResource("19_s1cs0")]
+transform = Transform3D(1.9106855e-15, -4.371139e-08, 1, -1, -4.371139e-08, 0, 4.371139e-08, -1, -4.371139e-08, 3.9044285, 0.56726503, -1.082916)
+
+[node name="figurine-cube-detailed2" parent="." instance=ExtResource("20_ma08d")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 3.274668, 0, -3.5713212)
+
+[node name="figurine2" parent="." instance=ExtResource("21_nylso")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -3.948058, -4.7683716e-07, -4.7636986)
+
+[node name="animal-bison2" parent="." instance=ExtResource("22_klcii")]
+transform = Transform3D(-0.9943231, 0, 0.1064028, 0, 1, 0, -0.1064028, 0, -0.9943231, 2.3363116, 0, -3.4688752)
