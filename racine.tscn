@@ -1,9 +1,9 @@
 [gd_scene load_steps=8 format=3 uid="uid://bovk7aarjx8yk"]
 
-[ext_resource type="PackedScene" uid="uid://ci6cby5siqova" path="res://kenney-3d-platformer/models/character.glb" id="1_4vgkv"]
+[ext_resource type="PackedScene" uid="uid://ci6cby5siqova" path="res://assets-thirdparty/kenney-3d-platformer/models/character.glb" id="1_4vgkv"]
 [ext_resource type="Script" uid="uid://b8mww0xpd86j0" path="res://jeu.gd" id="1_xsnwh"]
-[ext_resource type="PackedScene" uid="uid://dmfmqjpx4n2ei" path="res://kenney-3d-platformer/models/platform-large.glb" id="3_rkcwo"]
-[ext_resource type="PackedScene" uid="uid://bxxenl01jjwtn" path="res://kenney-3d-platformer/models/flag.glb" id="4_0tuo0"]
+[ext_resource type="PackedScene" uid="uid://dmfmqjpx4n2ei" path="res://assets-thirdparty/kenney-3d-platformer/models/platform-large.glb" id="3_rkcwo"]
+[ext_resource type="PackedScene" uid="uid://bxxenl01jjwtn" path="res://assets-thirdparty/kenney-3d-platformer/models/flag.glb" id="4_0tuo0"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_4vgkv"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)

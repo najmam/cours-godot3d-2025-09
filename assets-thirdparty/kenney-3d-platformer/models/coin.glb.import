@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://ddsp4je1uyug4"
-path="res://.godot/imported/cloud.glb-034af1791449e87cb8a6c19f99c3ea0f.scn"
+uid="uid://blmda8pe7pue7"
+path="res://.godot/imported/coin.glb-b4fe383cfd82161b2a8b941681c41531.scn"
 
 [deps]
 
-source_file="res://kenney-3d-platformer/models/cloud.glb"
-dest_files=["res://.godot/imported/cloud.glb-034af1791449e87cb8a6c19f99c3ea0f.scn"]
+source_file="res://assets-thirdparty/kenney-3d-platformer/models/coin.glb"
+dest_files=["res://.godot/imported/coin.glb-b4fe383cfd82161b2a8b941681c41531.scn"]
 
 [params]
 

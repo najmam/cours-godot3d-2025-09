@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dvl3kfcqh01dv"
-path="res://.godot/imported/platform-medium.glb-2c138e9f028b4e32abfdf5db804836ee.scn"
+uid="uid://dr4y1b56pclt0"
+path="res://.godot/imported/platform-grass-large-round.glb-3ef6f9072b9f025dcf9c6ac225e25cf7.scn"
 
 [deps]
 
-source_file="res://kenney-3d-platformer/models/platform-medium.glb"
-dest_files=["res://.godot/imported/platform-medium.glb-2c138e9f028b4e32abfdf5db804836ee.scn"]
+source_file="res://assets-thirdparty/kenney-3d-platformer/models/platform-grass-large-round.glb"
+dest_files=["res://.godot/imported/platform-grass-large-round.glb-3ef6f9072b9f025dcf9c6ac225e25cf7.scn"]
 
 [params]
 

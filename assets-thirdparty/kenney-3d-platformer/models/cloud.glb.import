@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bxxenl01jjwtn"
-path="res://.godot/imported/flag.glb-45d498f1cd8fb322412102f265f97d52.scn"
+uid="uid://ddsp4je1uyug4"
+path="res://.godot/imported/cloud.glb-73fa22440073f7ba37214d3c68478066.scn"
 
 [deps]
 
-source_file="res://kenney-3d-platformer/models/flag.glb"
-dest_files=["res://.godot/imported/flag.glb-45d498f1cd8fb322412102f265f97d52.scn"]
+source_file="res://assets-thirdparty/kenney-3d-platformer/models/cloud.glb"
+dest_files=["res://.godot/imported/cloud.glb-73fa22440073f7ba37214d3c68478066.scn"]
 
 [params]
 
