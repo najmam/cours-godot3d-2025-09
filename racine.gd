@@ -23,9 +23,17 @@ func _process(delta: float) -> void:
 	## 1) le perso doit regarder où il va
 	## 2) quand on n'appuie sur rien, le perso doit garder la dernière
 	##    direction de regard qu'il avait pendant qu'il se déplaçait.
+	
 	if vitesse != Vector3.ZERO:
-		orientation = (-Vector3.FORWARD).signed_angle_to(vitesse, Vector3.UP)
-	%character.rotation.y = orientation
+		orientation = vitesse.angle_to(Vector3(0,0,1)) * 180/PI
+		#orientation = (-Vector3.FORWARD).signed_angle_to(vitesse, Vector3.UP)
+	
+	# corriger l'orientatiqon quand perso va vers la gauche
+	if vitesse.x < 0:
+		print("orientation = ", orientation, ", vitesse = ", vitesse)
+		orientation = 360-orientation
+	
+	%character.rotation_degrees.y = orientation
 	
 	## EXO 3
 	## - permettre de déplacer le personnage à la manette
