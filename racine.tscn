@@ -1,9 +1,7 @@
-[gd_scene load_steps=26 format=3 uid="uid://bovk7aarjx8yk"]
+[gd_scene load_steps=29 format=3 uid="uid://bovk7aarjx8yk"]
 
-[ext_resource type="PackedScene" uid="uid://ci6cby5siqova" path="res://assets-thirdparty/kenney-3d-platformer/models/character.glb" id="1_4vgkv"]
 [ext_resource type="Script" uid="uid://b8mww0xpd86j0" path="res://racine.gd" id="1_xsnwh"]
 [ext_resource type="Script" uid="uid://b58pc037vqgqa" path="res://camera.gd" id="2_rlwjj"]
-[ext_resource type="Script" uid="uid://c37kxvfbb1tqi" path="res://character.gd" id="4_ns5mm"]
 [ext_resource type="PackedScene" uid="uid://2dt8jpdixua2" path="res://assets-thirdparty/kenney_prototype-kit/Models/GLB format/button-floor-square-small.glb" id="5_x3dlp"]
 [ext_resource type="PackedScene" uid="uid://ub7n5p06sm0i" path="res://assets-thirdparty/kenney_prototype-kit/Models/GLB format/animal-dog.glb" id="6_ou6ki"]
 [ext_resource type="PackedScene" uid="uid://ckgll0ohvy0eb" path="res://assets-thirdparty/kenney_prototype-kit/Models/GLB format/shape-cube.glb" id="7_mf3sx"]
@@ -21,7 +19,11 @@
 [ext_resource type="PackedScene" uid="uid://eruuvbclcy4p" path="res://assets-thirdparty/kenney_prototype-kit/Models/GLB format/weapon-shield.glb" id="19_s1cs0"]
 [ext_resource type="PackedScene" uid="uid://cgk31hp1dmd16" path="res://assets-thirdparty/kenney_prototype-kit/Models/GLB format/figurine-cube-detailed.glb" id="20_ma08d"]
 [ext_resource type="PackedScene" uid="uid://dmhmfw4pdbh0m" path="res://assets-thirdparty/kenney_prototype-kit/Models/GLB format/figurine.glb" id="21_nylso"]
+[ext_resource type="PackedScene" uid="uid://dl5d4vjnjg6e7" path="res://prefabs/interrupteur.tscn" id="21_x3dlp"]
 [ext_resource type="PackedScene" uid="uid://7xkoydeoxrpd" path="res://assets-thirdparty/kenney_prototype-kit/Models/GLB format/animal-bison.glb" id="22_klcii"]
+[ext_resource type="PackedScene" uid="uid://b4in4kc3hlqk4" path="res://prefabs/character.tscn" id="22_ou6ki"]
+[ext_resource type="PackedScene" uid="uid://o0rx8kkuwcv6" path="res://prefabs/coin.tscn" id="23_ou6ki"]
+[ext_resource type="AudioStream" uid="uid://d1trrsubf0es0" path="res://assets-thirdparty/kenney-3d-platformer/sounds/coin.ogg" id="25_2kdf2"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_4vgkv"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -35,8 +37,15 @@ background_mode = 2
 sky = SubResource("Sky_xsnwh")
 tonemap_mode = 2
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_ou6ki"]
+size = Vector3(1, 0.9522095, 0.63879395)
+
 [node name="racine" type="Node3D"]
 script = ExtResource("1_xsnwh")
+
+[node name="sound_effect_coin" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("25_2kdf2")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_rkcwo")
@@ -45,14 +54,8 @@ environment = SubResource("Environment_rkcwo")
 transform = Transform3D(1, 0, 0, 0, -0.63470364, 0.7727556, 0, -0.7727556, -0.63470364, 0, 4.3462925, -7.557098)
 
 [node name="camera" type="Camera3D" parent="."]
-unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 0.93358046, 0.35836798, 0, -0.35836798, 0.93358046, 0, 2.4663687, 4.7931976)
 script = ExtResource("2_rlwjj")
-
-[node name="character" parent="." instance=ExtResource("1_4vgkv")]
-unique_name_in_owner = true
-transform = Transform3D(1, 0, -1.7484555e-07, 0, 1, 0, 1.7484555e-07, 0, 1, 0, 0, 0)
-script = ExtResource("4_ns5mm")
 
 [node name="=====LEVEL=====" type="Node3D" parent="."]
 
@@ -110,5 +113,38 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 3.27
 [node name="figurine2" parent="." instance=ExtResource("21_nylso")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -3.948058, -4.7683716e-07, -4.7636986)
 
-[node name="animal-bison2" parent="." instance=ExtResource("22_klcii")]
+[node name="bison" parent="." instance=ExtResource("22_klcii")]
 transform = Transform3D(-0.9943231, 0, 0.1064028, 0, 1, 0, -0.1064028, 0, -0.9943231, 2.3363116, 0, -3.4688752)
+
+[node name="interrupteur" parent="." instance=ExtResource("21_x3dlp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.11903, 0, -0.81062794)
+
+[node name="character" parent="." instance=ExtResource("22_ou6ki")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.013182402, 0, 0.076348305)
+
+[node name="Area3D" type="Area3D" parent="character"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="character/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.03729081, 0.5660095, -0.028435707)
+shape = SubResource("BoxShape3D_ou6ki")
+
+[node name="coin" parent="." instance=ExtResource("23_ou6ki")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.56036, 0, -0.4563775)
+
+[node name="coin2" parent="." instance=ExtResource("23_ou6ki")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.0383058, 0, 2.1712036)
+
+[node name="coin3" parent="." instance=ExtResource("23_ou6ki")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.80898976, 0, 1.6340029)
+
+[node name="coin4" parent="." instance=ExtResource("23_ou6ki")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.0159655, 0, 1.1787877)
+
+[node name="coin5" parent="." instance=ExtResource("23_ou6ki")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7231486, 0, 1.5994761)
+
+[node name="coin6" parent="." instance=ExtResource("23_ou6ki")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.7646053, 0, -0.9185147)
+
+[node name="coin7" parent="." instance=ExtResource("23_ou6ki")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4917166, 0, 1.2535627)

@@ -1,4 +1,4 @@
-extends Node3D
+extends Camera3D
 
 const ROTATION_SPEED = 1.
 

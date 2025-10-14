@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dl5d4vjnjg6e7"]
+
+[ext_resource type="PackedScene" uid="uid://2dt8jpdixua2" path="res://assets-thirdparty/kenney_prototype-kit/Models/GLB format/button-floor-square-small.glb" id="1_7fd0t"]
+
+[node name="interrupteur" type="Node3D"]
+
+[node name="button-floor-square-small3" parent="." instance=ExtResource("1_7fd0t")]
+transform = Transform3D(0.5, 0, 0, 0, -2.1855694e-08, -0.5, 0, 0.5, -2.1855694e-08, 0, 0.6, 0.09)

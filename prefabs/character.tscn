@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://b4in4kc3hlqk4"]
+
+[ext_resource type="PackedScene" uid="uid://ci6cby5siqova" path="res://assets-thirdparty/kenney-3d-platformer/models/character.glb" id="1_xofgc"]
+[ext_resource type="Script" uid="uid://c37kxvfbb1tqi" path="res://character.gd" id="2_v5mhf"]
+
+[node name="character" type="Node3D"]
+script = ExtResource("2_v5mhf")
+
+[node name="character-model" parent="." instance=ExtResource("1_xofgc")]

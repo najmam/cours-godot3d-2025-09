@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://o0rx8kkuwcv6"]
+
+[ext_resource type="Script" uid="uid://b7ledswjk0oqp" path="res://coin.gd" id="1_ab8qe"]
+[ext_resource type="PackedScene" uid="uid://blmda8pe7pue7" path="res://assets-thirdparty/kenney-3d-platformer/models/coin.glb" id="2_1we67"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_ou6ki"]
+height = 0.16836548
+radius = 0.22460938
+
+[node name="coin" type="Area3D"]
+script = ExtResource("1_ab8qe")
+
+[node name="model" parent="." instance=ExtResource("2_1we67")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, -0.000289917, 0.20827234, 0)
+shape = SubResource("CylinderShape3D_ou6ki")
