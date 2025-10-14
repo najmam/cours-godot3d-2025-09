@@ -4,6 +4,11 @@ const CHARACTER = preload("res://prefabs/character.tscn")
 
 var area_du_personnage
 
+
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("player_action"):
+		$anim_player_level.play("level_start")
+
 func _ready():
 	area_du_personnage = $character/Area3D
 	

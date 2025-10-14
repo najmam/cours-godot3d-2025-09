@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://bovk7aarjx8yk"]
+[gd_scene load_steps=32 format=3 uid="uid://bovk7aarjx8yk"]
 
 [ext_resource type="Script" uid="uid://b8mww0xpd86j0" path="res://racine.gd" id="1_xsnwh"]
 [ext_resource type="Script" uid="uid://b58pc037vqgqa" path="res://camera.gd" id="2_rlwjj"]
@@ -35,10 +35,96 @@ sky_material = SubResource("ProceduralSkyMaterial_4vgkv")
 [sub_resource type="Environment" id="Environment_rkcwo"]
 background_mode = 2
 sky = SubResource("Sky_xsnwh")
+ambient_light_color = Color(0.8862745, 0.6392157, 0.57254905, 1)
 tonemap_mode = 2
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ou6ki"]
 size = Vector3(1, 0.9522095, 0.63879395)
+
+[sub_resource type="Animation" id="Animation_mf3sx"]
+resource_name = "level_start"
+length = 2.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("=====LEVEL=====/camera:fov")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.95, 2.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [60.0, 90.0, 75.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("animal-dog2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2.49),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-1.1552664, 0, -3.8761418), Vector3(-1.1552662, 0, 2.0362837)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("bison:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 2.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(2.3363116, 0, -3.4688752), Vector3(1.8987108, 0, 0.62045836)]
+}
+
+[sub_resource type="Animation" id="Animation_2kdf2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("=====LEVEL=====/camera:fov")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [75.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("animal-dog2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-1.1552664, 0, -3.8761418)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("bison:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(2.3363116, 0, -3.4688752)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_owi8g"]
+_data = {
+&"RESET": SubResource("Animation_2kdf2"),
+&"level_start": SubResource("Animation_mf3sx")
+}
 
 [node name="racine" type="Node3D"]
 script = ExtResource("1_xsnwh")
@@ -53,11 +139,11 @@ environment = SubResource("Environment_rkcwo")
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -0.63470364, 0.7727556, 0, -0.7727556, -0.63470364, 0, 4.3462925, -7.557098)
 
-[node name="camera" type="Camera3D" parent="."]
+[node name="=====LEVEL=====" type="Node3D" parent="."]
+
+[node name="camera" type="Camera3D" parent="=====LEVEL====="]
 transform = Transform3D(1, 0, 0, 0, 0.93358046, 0.35836798, 0, -0.35836798, 0.93358046, 0, 2.4663687, 4.7931976)
 script = ExtResource("2_rlwjj")
-
-[node name="=====LEVEL=====" type="Node3D" parent="."]
 
 [node name="button-floor-square-small2" parent="." instance=ExtResource("5_x3dlp")]
 transform = Transform3D(9.553427e-16, 2.1855694e-08, 0.5, 0.5, -2.1855694e-08, 0, 2.1855694e-08, 0.5, -2.1855694e-08, -2.9069997e-07, 0.55048966, -6.65044)
@@ -148,3 +234,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.7646053, 0, -0.9185147)
 
 [node name="coin7" parent="." instance=ExtResource("23_ou6ki")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4917166, 0, 1.2535627)
+
+[node name="anim_player_level" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_owi8g")
+}

@@ -4,6 +4,8 @@ extends Node3D
 @export var nom: String = "toto"
 @export var couleur: Color = Color.WHITE
 
+@onready var animplayer = $"character-model/AnimationPlayer"
+
 var orientation: float = 0 
 
 func _ready():
@@ -17,4 +19,7 @@ func _process(delta: float) -> void:
 	position += vitesse_max * vitesse * delta
 	if vitesse != Vector3.ZERO:
 		orientation = (-Vector3.FORWARD).signed_angle_to(vitesse, Vector3.UP)
+		animplayer.play("walk")
+	else:
+		animplayer.play("idle")
 	rotation.y = orientation
